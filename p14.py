@@ -1,8 +1,6 @@
-# empty file ----->  16, 15, 14, 10, 7
 # python -m streamlit run C:\Users\lenovo\Desktop\data\python\p14.py
 import streamlit as st
 
-# Initialize session state variables if not already initialized
 if 'pin' not in st.session_state:
     st.session_state.pin = ""
 if 'balance' not in st.session_state:
@@ -14,8 +12,7 @@ class ATM:
 
     def menu(self):
         st.title("ATM Application")
-        
-        # Menu options with unique key
+       
         option = st.radio(
             "Select an option", 
             ('Generate Pin', 'Change Pin', 'Balance Enquiry', 'Withdraw', 'Exit'), 
@@ -75,8 +72,7 @@ class ATM:
     def exit(self):
         st.subheader("Thank You for Using the ATM")
         st.info("Goodbye!")
-        st.stop()  # Stops the app from running further
+        st.stop()
 
-# Run the app
 if __name__ == "__main__":
     c1 = ATM()
